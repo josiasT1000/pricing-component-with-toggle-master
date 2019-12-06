@@ -1,6 +1,154 @@
+html{
+  font-size: 1.5rem;
+}
 body {
   /* background-image: url("images/bg-top.svg"); */
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
 }
+img{
+  position: absolute;
+  z-index: -1;
+}
+#img-top{
+  top: 0;
+  right: 0;
+}
+#img-bottom{
+  bottom: 0;
+  left: 0;
+}
+h1{
+  font-size: 2.5rem;
+  margin: 1.5em;
+}
+
+#myCheckbox{
+  display: none;
+}
+label{
+  display: inline-flex;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+}
+label::before{
+  content: "Annually";
+  position: absolute;
+  right: 100%;
+  padding-right: 2em;
+}
+label::after{
+  content: "Monthly";
+  position: absolute;
+  left: 100%;
+  padding-left: 2em;
+}
+label > span{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+  border-radius: 1em;
+}
+label > span::before{
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border-radius: 1em;
+  transition: .4s;
+}
+#myCheckbox:checked ~ label > span::before{
+  transform: translateX(30px);
+}
+
+.plans-content{
+  display: flex;
+  flex-direction: row;
+  width: 76%;
+  /* border: 1px solid black; */
+  margin: 2em auto;
+  align-items: baseline;
+}
+.plan-package{
+  width: 33.33%;
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 .5rem 2.5rem rgba(0,0,0,.15)!important;
+  padding: 1em 1.5em;
+  align-self: center;
+}
+#professional-plan{
+  padding: 2em 1.5em;
+  background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  box-shadow: none;
+}
+#professional-plan h2, #professional-plan li{
+  color: white;
+  border-color: white;
+}
+#myCheckbox ~ .plans-content .price1::before{
+  content: "$199.99";
+}
+#myCheckbox:checked ~ .plans-content .price1::before{
+  content: "$19.99";
+}
+#myCheckbox ~ .plans-content .price2::before{
+  content: "$249.99";
+}
+#myCheckbox:checked ~ .plans-content .price2::before{
+  content: "$24.99";
+}
+#myCheckbox ~ .plans-content .price3::before{
+  content: "$399.99";
+}
+#myCheckbox:checked ~ .plans-content .price3::before{
+  content: "$39.99";
+}
+
+h2, li{
+  font-size: 1rem;
+}
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+li{
+  padding: 1em 0;
+  border-bottom: 1px solid hsla(0, 100%, 90%, 0.5);
+}
+.price1, .price2, .price3{
+  font-size: 3.5rem;
+  padding: 0 0 0.4em;
+}
+.learn-more{
+  width: 100%;
+  text-transform: uppercase;
+  padding: 1em;
+  margin: 1em 0;
+  background-image: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+#professional-plan .learn-more{
+  background: white;
+  color: hsl(237, 63%, 64%);
+}
+
+
+
 
 
 
@@ -10,4 +158,89 @@ body {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+
+@media screen and (max-width: 1500px){
+  html{
+    font-size: 1rem;
+  }
+  body {
+    /* background-image: url("images/bg-top.svg"); */
+  }
+  h1{
+    font-size: 1.5rem;
+  }
+  label{
+    width: 40px;
+    height: 25px;
+  }
+  label::after, label::before{
+    font-size: 0.7rem;
+  }
+  label > span::before{
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    transition: .4s;
+  }
+  #myCheckbox:checked ~ label > span::before{
+    transform: translateX(15px);
+  }
+}
+@media screen and (max-width: 500px){
+  html{
+    font-size: 0.6rem;
+  }
+  body{
+    /* background-color: red; */
+  }
+  #img-top{
+    right: -50%;
+  }
+  #img-bottom{
+    display: none;
+  }
+  h1{
+    font-size: 3.5rem;
+    margin: 1em;
+  }
+  label{
+    width: 50px;
+    height: 30px;
+  }
+  label::before, label::after{
+    font-size: 1.5rem;
+  }
+  label > span{
+    border-radius: 2em;
+  }
+  label > span::before{
+    border-radius: 2em;
+    width: 20px;
+    height: 20px
+  }
+  #myCheckbox:checked ~ label > span::before{
+    transform: translateX(20px);
+  }
+
+  h2, li, .learn-more{
+    font-size: 1.5rem;
+  }
+  .price1, .price2, .price3{
+    font-size: 6rem;
+  }
+  .plans-content{
+    flex-direction: column;
+  }
+  .plan-package{
+    width: 100%;
+    margin: 1.5em 0;
+    border-radius: 1em;
+  }
+  #professional-plan{
+    padding: 1em 1.5em;
+  }
+
 }
