@@ -19,14 +19,15 @@ img{
   bottom: 0;
   left: 0;
 }
-h1{
-  font-size: 2.5rem;
-  margin: 1.5em;
-}
-
 #myCheckbox{
   display: none;
 }
+h1{
+  font-size: 2rem;
+  margin: 1em;
+}
+
+/* styling the switch toggle buttom */
 label{
   display: inline-flex;
   align-items: center;
@@ -35,18 +36,20 @@ label{
   position: relative;
   cursor: pointer;
 }
+label:hover{
+  opacity: 0.5;
+}
 label::before{
   content: "Annually";
-  position: absolute;
   right: 100%;
   padding-right: 2em;
 }
 label::after{
   content: "Monthly";
-  position: absolute;
   left: 100%;
   padding-left: 2em;
 }
+
 label > span{
   position: absolute;
   top: 0;
@@ -54,7 +57,6 @@ label > span{
   left: 0;
   bottom: 0;
   background-image: linear-gradient(90deg,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
-  border-radius: 1em;
 }
 label > span::before{
   content: "";
@@ -64,18 +66,22 @@ label > span::before{
   width: 36px;
   height: 36px;
   background-color: white;
-  border-radius: 1em;
   transition: .4s;
+}
+label > span, label > span::before, label::before, label::after{
+  position: absolute;
+  border-radius: 1em;
+  font-size: 0.7rem;
 }
 #myCheckbox:checked ~ label > span::before{
   transform: translateX(30px);
 }
 
+/* styling prices part */
 .plans-content{
   display: flex;
   flex-direction: row;
   width: 76%;
-  /* border: 1px solid black; */
   margin: 2em auto;
   align-items: baseline;
 }
@@ -142,9 +148,20 @@ li{
   border-radius: 0.3em;
   cursor: pointer;
 }
+.learn-more:hover{
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid hsl(237, 63%, 64%);
+  color: hsl(237, 63%, 64%);
+}
 #professional-plan .learn-more{
   background: white;
   color: hsl(237, 63%, 64%);
+}
+#professional-plan .learn-more:hover{
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
 }
 
 
@@ -196,10 +213,7 @@ li{
   body{
     /* background-color: red; */
   }
-  #img-top{
-    right: -50%;
-  }
-  #img-bottom{
+  #img-top, #img-bottom{
     display: none;
   }
   h1{
@@ -218,8 +232,8 @@ li{
   }
   label > span::before{
     border-radius: 2em;
-    width: 20px;
-    height: 20px
+    width: 24px;
+    height: 24px;
   }
   #myCheckbox:checked ~ label > span::before{
     transform: translateX(20px);
@@ -242,5 +256,6 @@ li{
   #professional-plan{
     padding: 1em 1.5em;
   }
+
 
 }
