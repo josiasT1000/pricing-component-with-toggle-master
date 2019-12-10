@@ -2,7 +2,6 @@ html{
   font-size: 1.5rem;
 }
 body {
-  /* background-image: url("images/bg-top.svg"); */
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -23,7 +22,7 @@ img{
   display: none;
 }
 h1{
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 1em;
 }
 
@@ -31,8 +30,8 @@ h1{
 label{
   display: inline-flex;
   align-items: center;
-  width: 80px;
-  height: 50px;
+  width: 40px;
+  height: 25px;
   position: relative;
   cursor: pointer;
 }
@@ -49,7 +48,11 @@ label::after{
   left: 100%;
   padding-left: 2em;
 }
-
+label > span, label > span::before, label::before, label::after{
+  position: absolute;
+  border-radius: 2em;
+  font-size: 0.7rem;
+}
 label > span{
   position: absolute;
   top: 0;
@@ -61,20 +64,16 @@ label > span{
 label > span::before{
   content: "";
   position: absolute;
-  top: 7px;
-  left: 7px;
-  width: 36px;
-  height: 36px;
   background-color: white;
   transition: .4s;
+  top: 3px;
+  left: 3px;
+  width: 19px;
+  height: 19px;
 }
-label > span, label > span::before, label::before, label::after{
-  position: absolute;
-  border-radius: 1em;
-  font-size: 0.7rem;
-}
+
 #myCheckbox:checked ~ label > span::before{
-  transform: translateX(30px);
+  transform: translateX(15px);
 }
 
 /* styling prices part */
@@ -129,7 +128,7 @@ ul{
   padding: 0;
 }
 li{
-  padding: 1em 0;
+  padding: 1.25em 0;
   border-bottom: 1px solid hsla(0, 100%, 90%, 0.5);
 }
 .price1, .price2, .price3{
@@ -182,39 +181,21 @@ li{
   html{
     font-size: 1rem;
   }
-  body {
-    /* background-image: url("images/bg-top.svg"); */
-  }
-  h1{
-    font-size: 1.5rem;
-  }
-  label{
-    width: 40px;
-    height: 25px;
-  }
-  label::after, label::before{
-    font-size: 0.7rem;
-  }
-  label > span::before{
-    top: 3px;
-    left: 3px;
-    width: 19px;
-    height: 19px;
-    transition: .4s;
-  }
-  #myCheckbox:checked ~ label > span::before{
-    transform: translateX(15px);
-  }
 }
 @media screen and (max-width: 500px){
   html{
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
   body{
-    /* background-color: red; */
+    overflow-x: hidden;
   }
-  #img-top, #img-bottom{
+
+  #img-bottom{
     display: none;
+  }
+  #img-top{
+    bottom: 200px;
+    left: 50%;
   }
   h1{
     font-size: 3.5rem;
@@ -225,13 +206,12 @@ li{
     height: 30px;
   }
   label::before, label::after{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
-  label > span{
+  label > span, label > span::before{
     border-radius: 2em;
   }
   label > span::before{
-    border-radius: 2em;
     width: 24px;
     height: 24px;
   }
@@ -242,20 +222,25 @@ li{
   h2, li, .learn-more{
     font-size: 1.5rem;
   }
+  li{
+    padding: 1.4em 0;
+  }
   .price1, .price2, .price3{
     font-size: 6rem;
+    /* padding: 0.5em 0; */
   }
   .plans-content{
     flex-direction: column;
+    width: auto;
   }
   .plan-package{
-    width: 100%;
+    width: 80%;
     margin: 1.5em 0;
     border-radius: 1em;
   }
-  #professional-plan{
+  /* #professional-plan{
     padding: 1em 1.5em;
-  }
+  } */
 
 
 }
