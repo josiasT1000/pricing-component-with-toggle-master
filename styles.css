@@ -186,16 +186,15 @@ li{
   html{
     font-size: 0.7rem;
   }
-  body{
-    overflow-x: hidden;
-  }
-
   #img-bottom{
     display: none;
   }
   #img-top{
-    bottom: 200px;
-    left: 50%;
+    /* bottom: 200px; */
+    /* left: 50%; */
+    width: 50%;
+    height: 80%;
+    object-fit: cover;
   }
   h1{
     font-size: 3.5rem;
