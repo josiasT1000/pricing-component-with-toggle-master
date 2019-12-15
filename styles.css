@@ -6,7 +6,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
-img{
+#img-top, #img-bottom{
   position: absolute;
   z-index: -1;
 }
@@ -187,13 +187,20 @@ li{
     font-size: 0.7rem;
   }
   body{
+    /* max-width: 100%; */
     overflow-x: hidden;
   }
   #img-bottom{
     display: none;
   }
   #img-top{
+    overflow-x: hidden;
+  }
+  #img-top img{
     transform: translate(200px, -50px);
+    /* position: absolute; */
+    /* top: -50px; */
+    /* right: -200px; */
   }
   h1{
     font-size: 3.5rem;
