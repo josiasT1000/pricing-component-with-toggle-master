@@ -1,5 +1,5 @@
 html{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 body {
   text-align: center;
@@ -186,15 +186,14 @@ li{
   html{
     font-size: 0.7rem;
   }
+  body{
+    overflow-x: hidden;
+  }
   #img-bottom{
     display: none;
   }
   #img-top{
-    /* bottom: 200px; */
-    /* left: 50%; */
-    width: 50%;
-    height: 80%;
-    object-fit: cover;
+    transform: translate(200px, -50px);
   }
   h1{
     font-size: 3.5rem;
